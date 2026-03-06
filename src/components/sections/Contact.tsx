@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { MagneticButton } from "../ui/MagneticButton";
 import { Copy, CheckCircle2 } from "lucide-react";
 
 export const Contact = () => {
@@ -31,7 +30,7 @@ export const Contact = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12">
 
           <div>
-            {/* Hier is de status aangepast naar oranje en 'At Capacity' */}
+            {/* Status aangepast naar oranje en 'At Capacity' */}
             <p className="text-amber-500 font-mono text-sm tracking-[0.3em] uppercase mb-6 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
               Status: At Capacity // Currently Deployed
@@ -42,25 +41,30 @@ export const Contact = () => {
           </div>
 
           <div className="flex flex-col gap-4 w-full lg:w-auto">
-            <MagneticButton>
-              <button
-                onClick={copyEmail}
-                className="group w-full lg:w-auto relative px-8 py-5 bg-[#0a0a0a] border border-white/10 text-white rounded-2xl font-mono text-sm uppercase tracking-widest overflow-hidden transition-all active:scale-95 hover:border-blue-500/50"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  {copied ? <CheckCircle2 size={18} className="text-blue-400" /> : <Copy size={18} />}
-                  {copied ? "ADDRESS SECURED" : "COPY_EMAIL_ADDRESS"}
-                </span>
+            {/* Strakke knop: 
+              - whileTap={scale: 0.95} zorgt voor een klik-effect
+              - hover effecten blijven werken, maar hij vliegt niet meer weg
+            */}
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={copyEmail}
+              className="group w-full lg:w-auto relative px-8 py-5 bg-[#0a0a0a] border border-white/10 text-white rounded-2xl font-mono text-sm uppercase tracking-widest overflow-hidden hover:border-blue-500/50 transition-colors"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                {copied ? <CheckCircle2 size={18} className="text-blue-400" /> : <Copy size={18} />}
+                {copied ? "ADDRESS SECURED" : "COPY_EMAIL_ADDRESS"}
+              </span>
 
-                <motion.div
-                  className="absolute inset-0 bg-blue-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
-                />
-              </button>
-            </MagneticButton>
+              {/* Animatie voor de achtergrondkleur van de knop */}
+              <motion.div
+                className="absolute inset-0 bg-blue-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
+              />
+            </motion.button>
 
-            {/* Kleine waarschuwing dat je bezet bent */}
+            {/* Aangepaste waarschuwing (zonder PGP) */}
             <p className="text-gray-500 text-xs font-mono text-center lg:text-right mt-2">
-              Note: Expect delayed response times. <br className="md:hidden" /> PGP Key available upon request.
+              Note: Expect delayed response times due to current deployment.
             </p>
           </div>
         </div>
@@ -74,7 +78,7 @@ export const Contact = () => {
             <div>
               <p className="mb-2 opacity-40">Encrypted_Comms</p>
               <div className="flex gap-6">
-                <a href="https://www.linkedin.com/in/aryan-imanipour-951763213" className="text-white hover:text-blue-400 transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/aryan-imanipour-951763213" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors">LinkedIn</a>
               </div>
             </div>
           </div>
