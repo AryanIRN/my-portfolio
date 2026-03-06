@@ -17,7 +17,7 @@ export const Contact = () => {
   }, []);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("contact@imanipour.nl"); // Verander naar jouw echte mail
+    navigator.clipboard.writeText("aryanimanipours@gmail.com"); // Verander naar jouw echte mail
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
