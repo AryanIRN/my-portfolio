@@ -1,10 +1,11 @@
 "use client";
+
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { PROJECTS } from "@/constants";
 import { ExternalLink } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-// De 3D Tilt Wrapper
+// De veilige 3D Tilt Wrapper
 const ProjectCard = ({ children }: { children: React.ReactNode }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -15,7 +16,24 @@ const ProjectCard = ({ children }: { children: React.ReactNode }) => {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    // Checkt of het apparaat touch ondersteunt of geen hover heeft
+    const checkTouch = () => {
+      setIsTouchDevice(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
+    };
+
+    checkTouch();
+    window.addEventListener("resize", checkTouch);
+    return () => window.removeEventListener("resize", checkTouch);
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouchDevice) return;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -30,10 +48,34 @@ const ProjectCard = ({ children }: { children: React.ReactNode }) => {
   };
 
   const handleMouseLeave = () => {
+    if (isTouchDevice) return;
     x.set(0);
     y.set(0);
   };
 
+  // Voorkom Next.js hydration errors: render een simpele div totdat de client geladen is
+  if (!isMounted) {
+    return (
+      <div className="relative w-full rounded-3xl">
+        <div className="h-full w-full">
+          {children}
+        </div>
+      </div>
+    );
+  }
+
+  // Als het een touch device (mobiel) is, render de platte versie zonder 3D
+  if (isTouchDevice) {
+    return (
+      <div className="relative w-full rounded-3xl">
+        <div className="h-full w-full">
+          {children}
+        </div>
+      </div>
+    );
+  }
+
+  // De originele 3D container voor desktop
   return (
     <motion.div
       onMouseMove={handleMouseMove}
@@ -64,7 +106,6 @@ export const Projects = () => {
         viewport={{ once: true, amount: 0.5 }}
         className="mb-16"
       >
-        {/* Titel aangepast voor een sterkere, professionele uitstraling */}
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-white">
           Architectuur <span className="text-outline-white text-transparent">&</span> Implementaties
         </h2>
@@ -80,7 +121,7 @@ export const Projects = () => {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.2 }} // Ook hier amount verlaagd voor sneller laden op mobiel
               transition={{ delay: i * 0.1 }}
               className="group relative block h-full"
             >
@@ -91,14 +132,15 @@ export const Projects = () => {
                   className="object-cover w-full h-full opacity-30 group-hover:scale-105 transition-transform duration-700 group-hover:opacity-50"
                 />
 
-                {/* Overlay content met een subtiele blauwe gloed op hover */}
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/80 to-transparent group-hover:from-[#050b14]/95 transition-colors duration-500">
                   <div
                     style={{ transform: "translateZ(50px)" }}
-                    className="flex flex-wrap gap-2 mb-4"
+                    // 'flex-wrap' en 'gap-2' stonden hier al, wat goed is,
+                    // maar op mobiel was het misschien net te krap.
+                    className="flex flex-wrap items-center gap-2 mb-4"
                   >
                     {project.tech.map((t) => (
-                      <span key={t} className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 backdrop-blur-md rounded-full text-[10px] font-bold tracking-widest uppercase text-blue-400">
+                      <span key={t} className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 backdrop-blur-md rounded-full text-[10px] font-bold tracking-widest uppercase text-blue-400 whitespace-nowrap">
                         {t}
                       </span>
                     ))}

@@ -88,7 +88,7 @@ export const EDUCATION = [
     degree: "HBO-ICT",
     specialization: "Infrastructure & Security Management",
     period: "Bezig met afstuderen",
-    description: "Brede ICT-opleiding met focus op het ontwerpen, beveiligen en beheren van complexe infrastructuren. De rode draad was de overlap tussen techniek (TDS) en business/security (DMSS).",
+    description: "Brede ICT-opleiding met focus op het ontwerpen, beveiligen en beheren van complexe infrastructuren. De rode draad was de overlap tussen techniek  en business/security.",
     courses: [
       {
         name: "Cloud, DevOps & Security",
@@ -107,6 +107,6 @@ export const EDUCATION = [
         details: "Samenwerking tussen Ontwikkel, Beheer en Security afdelingen. Bepalen van IT-strategie, uitschrijven van baselines en risicobeheer op basis van bedrijfsprocessen."
       }
     ],
-    tech: ["Docker", "Kubernetes", "Python", "PowerShell", "Linux", "HTML/CSS", "Java", "PHP"]
+    tech: ["Netwerken", "Cloud", "DevOps", "Security", "Penetration Testing", "Audit", "Risk Management", "Docker", "Kubernetes", "Python", "PowerShell", "Linux", "HTML/CSS", "Java", "PHP"]
   }
 ];
