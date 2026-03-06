@@ -2,11 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  output: "export",       // Exporteer als statische HTML
+  output: 'export',     // Dit is de magie voor GitHub Pages
   images: {
-    unoptimized: true,    // GitHub Pages kan Next.js image optimization niet draaien
+    unoptimized: true, // GitHub Pages kan je plaatjes niet on-the-fly verkleinen
   },
-  // basePath: "/my-portfolio", // Zet dit aan als je repo NIET heet AryanIRN.github.io maar bijv. my-portfolio
 };
 
 export default nextConfig;
