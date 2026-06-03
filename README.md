@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Aryan Imanipour
 
-## Getting Started
+Persoonlijke portfolio-website. **Infrastructure & Security Management.**
+Live: [imanipour.nl](https://imanipour.nl)
 
-First, run the development server:
+> "Security is één grote puzzel — en die los ik graag op."
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+Pure **HTML, CSS en JavaScript** — geen build-step, geen framework, geen dependencies.
+Wat in de repo staat *is* de site. Dat houdt het snel, simpel en betrouwbaar te deployen.
+
+```
+index.html     # markup — alle secties
+styles.css     # dark, security-geïnspireerd thema + responsive layout
+script.js      # scroll-reveal, scramble-effect, custom cursor, 3D-tilt, CV-download
+favicon.svg    # logo
+CNAME          # custom domein (imanipour.nl)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> De PDF-CV wordt client-side gegenereerd; [jsPDF](https://github.com/parallax/jsPDF)
+> wordt pas geladen op het moment dat je op "Download CV" klikt (lazy-load via CDN),
+> zodat de pagina zelf snel blijft.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lokaal bekijken
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Geen build nodig. Open `index.html` direct, of start een mini-server:
 
-## Learn More
+```bash
+# Python
+python -m http.server 5173
 
-To learn more about Next.js, take a look at the following resources:
+# of Node (npx, geen install nodig)
+npx serve .
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ga daarna naar `http://localhost:5173`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (GitHub Pages)
 
-## Deploy on Vercel
+Automatisch via GitHub Actions: bij elke push naar `main` draait
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), die de repo-root
+1-op-1 publiceert naar GitHub Pages. Geen `npm install`, geen `next build`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Eenmalige instelling:** repo → *Settings → Pages → Build and deployment →
+Source = "GitHub Actions"*.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Het custom domein `imanipour.nl` staat in `CNAME` en blijft behouden.

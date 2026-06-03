@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Aryan Imanipour — Infrastructure &amp; Security Management</title>
+  <meta name="description" content="Portfolio van Aryan Imanipour — HBO-ICT'er, Infrastructure &amp; Security Management. Gedreven in het veilig en kostenefficiënt inrichten van complexe infrastructuur." />
+  <meta name="author" content="Aryan Imanipour" />
+  <meta name="theme-color" content="#050608" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aryan Imanipour — Infrastructure &amp; Security Management" />
+  <meta property="og:description" content="Security is één grote puzzel — en die los ik graag op." />
+  <meta property="og:url" content="https://imanipour.nl" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Film-grain noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Custom cursor (desktop / fine pointer only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#about">Naar inhoud</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Aryan Imanipour — naar boven">
+        <span class="nav__brand-mark">AI</span>
+        <span class="nav__brand-text">Imanipour</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Hoofdnavigatie">
+        <a href="#about" data-nav>Over mij</a>
+        <a href="#work" data-nav>Projecten</a>
+        <a href="#skills" data-nav>Skills</a>
+        <a href="#education" data-nav>Opleiding</a>
+        <a href="#contact" data-nav class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#about" data-nav-mobile>Over mij</a>
+      <a href="#work" data-nav-mobile>Projecten</a>
+      <a href="#skills" data-nav-mobile>Skills</a>
+      <a href="#education" data-nav-mobile>Opleiding</a>
+      <a href="#contact" data-nav-mobile>Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-label="Introductie">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow hero__glow--1"></div>
+        <div class="hero__glow hero__glow--2"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">
+          <span class="dot"></span>Infrastructure &amp; Security Management
+        </p>
+
+        <h1 class="hero__name" aria-label="Aryan Imanipour">
+          <span class="scramble" data-text="ARYAN">ARYAN</span>
+          <span class="scramble outline" data-text="IMANIPOUR">IMANIPOUR</span>
+        </h1>
+
+        <p class="hero__tagline reveal">
+          “Security is één grote puzzel — en die los ik graag op.”
+        </p>
+
+        <p class="hero__intro reveal">
+          21-jarige, gedreven IT'er met focus op infrastructuur, security en
+          kostenoptimalisatie. Bewezen in het veilig en efficiënt inrichten van
+          complexe infrastructuur via strategisch advies en procesverbetering.
+        </p>
+
+        <div class="hero__actions reveal">
+          <button class="btn btn--primary" id="downloadCv" data-magnetic>
+            <span class="btn__label">Download CV</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+          <a class="btn btn--ghost" href="#work" data-magnetic>
+            <span class="btn__label">Bekijk projecten</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#about" aria-label="Scroll naar beneden">
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section__head reveal">
+        <span class="section__index">01</span>
+        <h2 class="section__title" id="about-title">
+          Over <span class="outline">mij</span>
+        </h2>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p class="about__lead">
+            Ik combineer technische diepgang met een strategische, zakelijke blik op
+            veiligheid. Geen security om de security — maar oplossingen die
+            <em>aantoonbaar</em> risico verlagen én kosten besparen.
+          </p>
+          <p class="about__body">
+            Op dit moment rond ik mijn HBO-ICT-opleiding
+            <strong>Infrastructure &amp; Security Management</strong> af aan de HAN.
+            De rode draad in mijn werk is de overlap tussen techniek en business:
+            complexe infrastructuur veilig en efficiënt inrichten, processen
+            verbeteren en management adviseren met heldere, onderbouwde keuzes.
+          </p>
+
+          <ul class="about__stats">
+            <li>
+              <span class="about__stat-num">21</span>
+              <span class="about__stat-label">jaar</span>
+            </li>
+            <li>
+              <span class="about__stat-num">17×</span>
+              <span class="about__stat-label">kostenbesparing gerealiseerd</span>
+            </li>
+            <li>
+              <span class="about__stat-num">∞</span>
+              <span class="about__stat-label">nieuwsgierigheid</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Terminal card -->
+        <div class="terminal reveal" aria-hidden="true">
+          <div class="terminal__bar">
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__title">aryan@han:~</span>
+          </div>
+          <div class="terminal__body" id="terminalBody">
+            <p><span class="t-prompt">$</span> whoami</p>
+            <p class="t-out">aryan_imanipour</p>
+            <p><span class="t-prompt">$</span> cat ./focus.txt</p>
+            <p class="t-out">infrastructuur · security · kostenoptimalisatie</p>
+            <p><span class="t-prompt">$</span> status --current</p>
+            <p class="t-out"><span class="t-ok">[OK]</span> afstuderen — Infrastructure &amp; Security Management</p>
+            <p><span class="t-prompt">$</span> <span class="t-cursor">▋</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="work" aria-labelledby="work-title">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title" id="work-title">
+          Uitgelichte <span class="outline">projecten</span>
+        </h2>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="projects__list">
+        <!-- Project 1 -->
+        <article class="project reveal" data-tilt>
+          <div class="project__glow" aria-hidden="true"></div>
+          <div class="project__head">
+            <span class="project__num">P-01</span>
+            <div class="project__tags">
+              <span class="tag">Security Advies</span>
+              <span class="tag">Back-up</span>
+              <span class="tag">Risico-analyse</span>
+              <span class="tag tag--muted">Overheid · geanonimiseerd</span>
+            </div>
+          </div>
+
+          <h3 class="project__title">Adviesrapport Back-up Security</h3>
+          <p class="project__desc">
+            Strategisch én technisch adviesrapport voor een overheidsinstelling, gericht
+            op het voorkomen van <strong>ongeautoriseerde toegang tot back-updata</strong>.
+            Opgesteld vanuit een concrete vraag uit de organisatie en uitgewerkt tot een
+            besluitvormingsklaar eindproduct.
+          </p>
+
+          <ul class="project__points">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Diepgaande analyse met zowel technische als procesmatige oplossingen
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Meerdere uitgewerkte scenario's, elk met een eigen impact-analyse
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Vertaling van techniek naar onderbouwd advies voor management
+            </li>
+          </ul>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project reveal" data-tilt>
+          <div class="project__glow" aria-hidden="true"></div>
+          <div class="project__head">
+            <span class="project__num">P-02</span>
+            <div class="project__tags">
+              <span class="tag">Log Routing</span>
+              <span class="tag">SIEM / SOC</span>
+              <span class="tag">Object Storage</span>
+              <span class="tag">Compliance</span>
+            </div>
+          </div>
+
+          <h3 class="project__title">Enterprise Log Routing &amp; Kostenoptimalisatie</h3>
+          <p class="project__desc">
+            Herontwerp van de log-infrastructuur om kosten te minimaliseren én compliance
+            te waarborgen — zonder concessies aan de security-dekking.
+          </p>
+
+          <div class="project__ps">
+            <div class="ps">
+              <span class="ps__label ps__label--problem">Probleem</span>
+              <p>Eén duur platform deed zowel opslag als analyse van alle logdata. Zo duur
+              dat niet alles werd gelogd — een compliance- én security-risico.</p>
+            </div>
+            <div class="ps">
+              <span class="ps__label ps__label--solution">Oplossing</span>
+              <p>Een routeringslaag tussen bron en analyseplatform die de logstroom splitst:
+              álles naar goedkope objectopslag (archief), alleen beveiligingsincidenten door
+              naar het analyseplatform, waar het SOC ze oppakt.</p>
+            </div>
+          </div>
+
+          <!-- Pipeline diagram -->
+          <div class="pipeline" aria-label="Logstroom: bron naar router, daarna gesplitst naar object-opslag en SIEM/SOC">
+            <span class="pipe-node">Bron</span>
+            <span class="pipe-arrow">→</span>
+            <span class="pipe-node pipe-node--accent">Log&nbsp;Router</span>
+            <span class="pipe-split" aria-hidden="true">
+              <span class="pipe-branch">
+                <span class="pipe-arrow">→</span>
+                <span class="pipe-node">Object Storage <em>(archief)</em></span>
+              </span>
+              <span class="pipe-branch">
+                <span class="pipe-arrow">→</span>
+                <span class="pipe-node pipe-node--alert">SIEM → SOC</span>
+              </span>
+            </span>
+          </div>
+
+          <ul class="project__metrics">
+            <li>
+              <span class="metric__num">17×</span>
+              <span class="metric__label">goedkoper</span>
+            </li>
+            <li>
+              <span class="metric__num">100%</span>
+              <span class="metric__label">compliant</span>
+            </li>
+            <li>
+              <span class="metric__num">↑</span>
+              <span class="metric__label">scherpere alerting</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title" id="skills-title">
+          Technologisch <span class="outline">arsenaal</span>
+        </h2>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="skills__grid" id="skillsGrid">
+        <!-- Cards injected by script.js (with graceful fallback below) -->
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section education" id="education" aria-labelledby="edu-title">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title" id="edu-title">
+          Opleiding
+        </h2>
+        <span class="section__rule"></span>
+      </div>
+
+      <article class="edu reveal">
+        <div class="edu__head">
+          <div>
+            <h3 class="edu__degree">HBO-ICT — Infrastructure &amp; Security Management</h3>
+            <p class="edu__inst">Hogeschool van Arnhem en Nijmegen (HAN)</p>
+          </div>
+          <span class="edu__period">
+            <span class="dot dot--amber"></span>Bezig met afstuderen
+          </span>
+        </div>
+
+        <p class="edu__desc">
+          Brede ICT-opleiding met focus op het ontwerpen, beveiligen en beheren van
+          complexe infrastructuren. De rode draad: de overlap tussen techniek en
+          business/security.
+        </p>
+
+        <div class="edu__courses">
+          <div class="course">
+            <h4>Cloud, DevOps &amp; Security</h4>
+            <p>Veilige cloud-omgevingen (IaaS/PaaS/SaaS), geautomatiseerd met Python.
+            Praktijkervaring met Docker en Kubernetes op Linux.</p>
+          </div>
+          <div class="course">
+            <h4>Enterprise Infrastructuur &amp; Netwerken</h4>
+            <p>Ontwerpen en beveiligen van robuuste, redundante netwerken waarbij het
+            falen van één component niet leidt tot uitval (High Availability).</p>
+          </div>
+          <div class="course">
+            <h4>Technical Research &amp; Auditing</h4>
+            <p>Penetratietesten en security audits, kwetsbaarheden prioriteren (Risk
+            Management) en adviseren aan management via formele rapportages.</p>
+          </div>
+          <div class="course">
+            <h4>Security by Design &amp; SecDevOps</h4>
+            <p>Samenwerking tussen Ontwikkel, Beheer en Security. IT-strategie bepalen,
+            baselines uitschrijven en risicobeheer op basis van bedrijfsprocessen.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__bg" aria-hidden="true"></div>
+
+      <div class="contact__inner">
+        <p class="contact__status reveal">
+          <span class="dot dot--amber"></span>Status: open voor een afstudeer-/startersrol
+        </p>
+
+        <h2 class="contact__title reveal" id="contact-title">
+          Secure <span class="outline">channel</span>
+        </h2>
+
+        <p class="contact__lead reveal">
+          Een vraagstuk rond infrastructuur of security? Of gewoon even sparren?
+          Stuur een bericht — ik reageer graag.
+        </p>
+
+        <div class="contact__actions reveal">
+          <button class="btn btn--primary" id="copyEmail" data-magnetic>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="btn__label" id="copyEmailLabel">Kopieer e-mailadres</span>
+          </button>
+          <a class="btn btn--ghost" href="mailto:aryanimanipours@gmail.com" data-magnetic>
+            <span class="btn__label">Mail direct</span>
+          </a>
+        </div>
+
+        <div class="contact__links reveal">
+          <a href="mailto:aryanimanipours@gmail.com" class="contact__link">
+            <span class="contact__link-label">E-mail</span>
+            <span class="contact__link-value">aryanimanipours@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-imanipour-951763213" target="_blank" rel="noopener noreferrer" class="contact__link">
+            <span class="contact__link-label">LinkedIn</span>
+            <span class="contact__link-value">/in/aryan-imanipour</span>
+          </a>
+          <a href="https://github.com/AryanIRN" target="_blank" rel="noopener noreferrer" class="contact__link">
+            <span class="contact__link-label">GitHub</span>
+            <span class="contact__link-value">@AryanIRN</span>
+          </a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span>NL <span id="clock">--:--</span></span>
+        <span>SYS.VER 2.0.0 — © <span id="year">2026</span> Imanipour</span>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
