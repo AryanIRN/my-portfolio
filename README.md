@@ -1,17 +1,17 @@
-# Portfolio — Aryan Imanipour
+# Portfolio · Aryan Imanipour
 
 Persoonlijke portfolio-website. **Infrastructure & Security Management.**
 Live: [imanipour.nl](https://imanipour.nl)
 
-> "Security is één grote puzzel — en die los ik graag op."
+> "Security is één grote puzzel. En die los ik graag op."
 
 ## Stack
 
-Pure **HTML, CSS en JavaScript** — geen build-step, geen framework, geen dependencies.
+Pure **HTML, CSS en JavaScript**: geen build-step, geen framework, geen dependencies.
 Wat in de repo staat *is* de site. Dat houdt het snel, simpel en betrouwbaar te deployen.
 
 ```
-index.html     # markup — alle secties
+index.html     # markup, alle secties
 styles.css     # dark, security-geïnspireerd thema + responsive layout
 script.js      # scroll-reveal, scramble-effect, custom cursor, 3D-tilt, CV-download
 favicon.svg    # logo

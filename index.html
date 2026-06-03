@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Aryan Imanipour — Infrastructure &amp; Security Management</title>
-  <meta name="description" content="Portfolio van Aryan Imanipour — HBO-ICT'er, Infrastructure &amp; Security Management. Gedreven in het veilig en kostenefficiënt inrichten van complexe infrastructuur." />
+  <title>Aryan Imanipour · Infrastructure &amp; Security Management</title>
+  <meta name="description" content="Portfolio van Aryan Imanipour. HBO-ICT'er, Infrastructure &amp; Security Management. Gedreven in het veilig en kostenefficiënt inrichten van complexe infrastructuur." />
   <meta name="author" content="Aryan Imanipour" />
   <meta name="theme-color" content="#050608" />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aryan Imanipour — Infrastructure &amp; Security Management" />
-  <meta property="og:description" content="Security is één grote puzzel — en die los ik graag op." />
+  <meta property="og:title" content="Aryan Imanipour · Infrastructure &amp; Security Management" />
+  <meta property="og:description" content="Security is één grote puzzel. En die los ik graag op." />
   <meta property="og:url" content="https://imanipour.nl" />
   <meta property="og:locale" content="nl_NL" />
 
@@ -40,7 +40,7 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#top" class="nav__brand" aria-label="Aryan Imanipour — naar boven">
+      <a href="#top" class="nav__brand" aria-label="Aryan Imanipour, naar boven">
         <span class="nav__brand-mark">AI</span>
         <span class="nav__brand-text">Imanipour</span>
       </a>
@@ -88,7 +88,7 @@
         </h1>
 
         <p class="hero__tagline reveal">
-          “Security is één grote puzzel — en die los ik graag op.”
+          “Security is één grote puzzel. En die los ik graag op.”
         </p>
 
         <p class="hero__intro reveal">
@@ -128,7 +128,7 @@
         <div class="about__text reveal">
           <p class="about__lead">
             Ik combineer technische diepgang met een strategische, zakelijke blik op
-            veiligheid. Geen security om de security — maar oplossingen die
+            veiligheid. Geen security om de security, maar oplossingen die
             <em>aantoonbaar</em> risico verlagen én kosten besparen.
           </p>
           <p class="about__body">
@@ -169,7 +169,7 @@
             <p><span class="t-prompt">$</span> cat ./focus.txt</p>
             <p class="t-out">infrastructuur · security · kostenoptimalisatie</p>
             <p><span class="t-prompt">$</span> status --current</p>
-            <p class="t-out"><span class="t-ok">[OK]</span> afstuderen — Infrastructure &amp; Security Management</p>
+            <p class="t-out"><span class="t-ok">[OK]</span> afstuderen: Infrastructure &amp; Security Management</p>
             <p><span class="t-prompt">$</span> <span class="t-cursor">▋</span></p>
           </div>
         </div>
@@ -196,13 +196,13 @@
               <span class="tag">Security Advies</span>
               <span class="tag">Back-up</span>
               <span class="tag">Risico-analyse</span>
-              <span class="tag tag--muted">Overheid · geanonimiseerd</span>
+              <span class="tag">Belastingdienst</span>
             </div>
           </div>
 
           <h3 class="project__title">Adviesrapport Back-up Security</h3>
           <p class="project__desc">
-            Strategisch én technisch adviesrapport voor een overheidsinstelling, gericht
+            Strategisch én technisch adviesrapport voor de Belastingdienst, gericht
             op het voorkomen van <strong>ongeautoriseerde toegang tot back-updata</strong>.
             Opgesteld vanuit een concrete vraag uit de organisatie en uitgewerkt tot een
             besluitvormingsklaar eindproduct.
@@ -240,14 +240,14 @@
           <h3 class="project__title">Enterprise Log Routing &amp; Kostenoptimalisatie</h3>
           <p class="project__desc">
             Herontwerp van de log-infrastructuur om kosten te minimaliseren én compliance
-            te waarborgen — zonder concessies aan de security-dekking.
+            te waarborgen, zonder concessies aan de security-dekking.
           </p>
 
           <div class="project__ps">
             <div class="ps">
               <span class="ps__label ps__label--problem">Probleem</span>
               <p>Eén duur platform deed zowel opslag als analyse van alle logdata. Zo duur
-              dat niet alles werd gelogd — een compliance- én security-risico.</p>
+              dat niet alles werd gelogd: een compliance- én security-risico.</p>
             </div>
             <div class="ps">
               <span class="ps__label ps__label--solution">Oplossing</span>
@@ -257,21 +257,28 @@
             </div>
           </div>
 
-          <!-- Pipeline diagram -->
-          <div class="pipeline" aria-label="Logstroom: bron naar router, daarna gesplitst naar object-opslag en SIEM/SOC">
-            <span class="pipe-node">Bron</span>
-            <span class="pipe-arrow">→</span>
-            <span class="pipe-node pipe-node--accent">Log&nbsp;Router</span>
-            <span class="pipe-split" aria-hidden="true">
-              <span class="pipe-branch">
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-node">Object Storage <em>(archief)</em></span>
-              </span>
-              <span class="pipe-branch">
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-node pipe-node--alert">SIEM → SOC</span>
-              </span>
-            </span>
+          <!-- Flow diagram -->
+          <div class="flow" aria-label="Logstroom: bron naar log router, daarna gesplitst naar object-opslag (archief) en SIEM/SOC (incidenten)">
+            <div class="flow__step">
+              <span class="flow__node">Bron</span>
+              <span class="flow__cap">alle logdata</span>
+            </div>
+            <span class="flow__arrow" aria-hidden="true"></span>
+            <div class="flow__step">
+              <span class="flow__node flow__node--accent">Log Router</span>
+              <span class="flow__cap">splitst de stroom</span>
+            </div>
+            <span class="flow__arrow" aria-hidden="true"></span>
+            <div class="flow__branches">
+              <div class="flow__step">
+                <span class="flow__node">Object Storage</span>
+                <span class="flow__cap">archief · álle logs · goedkoop</span>
+              </div>
+              <div class="flow__step">
+                <span class="flow__node flow__node--alert">SIEM → SOC</span>
+                <span class="flow__cap">alleen security-incidenten</span>
+              </div>
+            </div>
           </div>
 
           <ul class="project__metrics">
@@ -303,7 +310,7 @@
       </div>
 
       <div class="skills__grid" id="skillsGrid">
-        <!-- Cards injected by script.js (with graceful fallback below) -->
+        <!-- Cards injected by script.js -->
       </div>
     </section>
 
@@ -320,7 +327,7 @@
       <article class="edu reveal">
         <div class="edu__head">
           <div>
-            <h3 class="edu__degree">HBO-ICT — Infrastructure &amp; Security Management</h3>
+            <h3 class="edu__degree">HBO-ICT, Infrastructure &amp; Security Management</h3>
             <p class="edu__inst">Hogeschool van Arnhem en Nijmegen (HAN)</p>
           </div>
           <span class="edu__period">
@@ -365,7 +372,7 @@
 
       <div class="contact__inner">
         <p class="contact__status reveal">
-          <span class="dot dot--amber"></span>Status: open voor een afstudeer-/startersrol
+          <span class="dot dot--amber"></span>Trainee Cyber Security @ Kadaster · vanaf okt 2026
         </p>
 
         <h2 class="contact__title reveal" id="contact-title">
@@ -373,8 +380,8 @@
         </h2>
 
         <p class="contact__lead reveal">
-          Een vraagstuk rond infrastructuur of security? Of gewoon even sparren?
-          Stuur een bericht — ik reageer graag.
+          Vanaf oktober 2026 start ik als trainee Cyber Security bij het Kadaster.
+          Tot die tijd ben ik bereikbaar voor een goed gesprek over infrastructuur en security.
         </p>
 
         <div class="contact__actions reveal">
@@ -396,16 +403,12 @@
             <span class="contact__link-label">LinkedIn</span>
             <span class="contact__link-value">/in/aryan-imanipour</span>
           </a>
-          <a href="https://github.com/AryanIRN" target="_blank" rel="noopener noreferrer" class="contact__link">
-            <span class="contact__link-label">GitHub</span>
-            <span class="contact__link-value">@AryanIRN</span>
-          </a>
         </div>
       </div>
 
       <footer class="footer">
         <span>NL <span id="clock">--:--</span></span>
-        <span>SYS.VER 2.0.0 — © <span id="year">2026</span> Imanipour</span>
+        <span>SYS.VER 2.0.0 · © <span id="year">2026</span> Imanipour</span>
       </footer>
     </section>
   </main>

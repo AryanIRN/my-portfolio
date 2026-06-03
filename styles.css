@@ -1,5 +1,5 @@
 /* ============================================================
-   Aryan Imanipour — Portfolio
+   Aryan Imanipour · Portfolio
    Dark, security-inspired theme. Vanilla CSS, no build step.
    ============================================================ */
 
@@ -696,32 +696,83 @@ button { font-family: inherit; cursor: pointer; }
 .ps__label--problem { color: #fca5a5; background: rgba(248,113,113,0.12); }
 .ps__label--solution { color: var(--green); background: rgba(52,211,153,0.12); }
 
-/* Pipeline diagram */
-.pipeline {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+/* Flow diagram */
+.flow {
   margin-top: 1.6rem;
-  padding: 1.1rem 1.2rem;
-  border: 1px dashed var(--line-2);
-  border-radius: 12px;
-  font-family: var(--mono);
-  font-size: 0.78rem;
+  padding: 1.8rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(59,130,246,0.06), transparent 60%),
+    rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.pipe-node {
-  padding: 0.45rem 0.8rem;
+.flow__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+.flow__node {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.6rem 1.1rem;
   border: 1px solid var(--line-2);
-  border-radius: 8px;
-  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  background: var(--card-2);
   white-space: nowrap;
 }
-.pipe-node em { color: var(--muted-2); font-style: normal; }
-.pipe-node--accent { color: var(--accent-2); border-color: rgba(96,165,250,0.45); background: rgba(59,130,246,0.1); }
-.pipe-node--alert { color: var(--amber); border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
-.pipe-arrow { color: var(--muted-2); }
-.pipe-split { display: inline-flex; flex-direction: column; gap: 0.5rem; }
-.pipe-branch { display: inline-flex; align-items: center; gap: 0.6rem; }
+.flow__node--accent {
+  color: var(--accent-2);
+  border-color: rgba(96,165,250,0.5);
+  background: rgba(59,130,246,0.12);
+  box-shadow: 0 0 26px -8px rgba(59,130,246,0.7);
+}
+.flow__node--alert {
+  color: var(--amber);
+  border-color: rgba(245,158,11,0.45);
+  background: rgba(245,158,11,0.1);
+}
+.flow__cap {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--muted-2);
+}
+.flow__arrow {
+  width: 1.5px;
+  height: 28px;
+  margin: 0.6rem 0;
+  background: linear-gradient(var(--accent-2), rgba(96,165,250,0.15));
+  position: relative;
+}
+.flow__arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--accent-2);
+}
+.flow__branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+}
+.flow__branches .flow__step {
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
 
 .project__metrics {
   list-style: none;
@@ -917,8 +968,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .contact__links {
   margin-top: 3.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   text-align: left;
 }
@@ -926,6 +978,8 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  flex: 1 1 240px;
+  max-width: 340px;
   padding: 1.2rem 1.3rem;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -993,7 +1047,6 @@ button { font-family: inherit; cursor: pointer; }
   .skills__grid { grid-template-columns: repeat(2, 1fr); }
   .project__ps { grid-template-columns: 1fr; }
   .edu__courses { grid-template-columns: 1fr; }
-  .contact__links { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
@@ -1005,6 +1058,7 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 520px) {
   .skills__grid { grid-template-columns: 1fr; }
+  .flow__branches { grid-template-columns: 1fr; }
   .hero__actions .btn,
   .contact__actions .btn { width: 100%; justify-content: center; }
   .about__stats { gap: 1.5rem; }

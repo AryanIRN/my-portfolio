@@ -1,5 +1,5 @@
 /* ============================================================
-   Aryan Imanipour — Portfolio interactions (vanilla JS)
+   Aryan Imanipour · Portfolio interactions (vanilla JS)
    ============================================================ */
 (() => {
   "use strict";
@@ -142,7 +142,7 @@
   }
 
   /* ----------------------------------------------------------
-     6. Text scramble (hero name) — on load + on hover
+     6. Text scramble (hero name): on load + on hover
      ---------------------------------------------------------- */
   const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&_<>/\\";
   function scramble(el) {
@@ -213,7 +213,7 @@
      ---------------------------------------------------------- */
   if (finePointer && !prefersReduced) {
     $$("[data-tilt]").forEach((card) => {
-      const MAX = 5; // degrees — subtle
+      const MAX = 5; // degrees, subtle
       card.addEventListener("pointermove", (e) => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
@@ -293,7 +293,7 @@
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   /* ----------------------------------------------------------
-     13. CV download — lazy-load jsPDF on click, build vector PDF
+     13. CV download: lazy-load jsPDF on click, build vector PDF
      ---------------------------------------------------------- */
   const cvBtn = $("#downloadCv");
   let jsPdfPromise = null;
@@ -357,7 +357,7 @@
     y += 16;
     doc.setFontSize(9);
     doc.setTextColor(...GRAY);
-    doc.text("aryanimanipours@gmail.com   |   linkedin.com/in/aryan-imanipour   |   github.com/AryanIRN   |   Nederland", M, y);
+    doc.text("aryanimanipours@gmail.com   |   linkedin.com/in/aryan-imanipour   |   Nederland", M, y);
     y += 8;
     doc.setDrawColor(...DARK);
     doc.setLineWidth(1.2);
@@ -366,12 +366,12 @@
 
     // Profiel
     heading("Profiel");
-    para("Gedreven, 21-jarige IT'er met focus op infrastructuur, security en kostenoptimalisatie. Bewezen in het veilig en efficient inrichten van complexe infrastructuur via strategisch advies en procesverbetering. Combineert technische diepgang met een zakelijke blik op veiligheid.", 10, GRAY, 14);
+    para("Gedreven, 21-jarige IT'er met focus op infrastructuur, security en kostenoptimalisatie. Bewezen in het veilig en efficient inrichten van complexe infrastructuur via strategisch advies en procesverbetering. Combineert technische diepgang met een zakelijke blik op veiligheid. Start oktober 2026 als trainee Cyber Security bij het Kadaster.", 10, GRAY, 14);
 
     // Opleiding
     heading("Opleiding");
     doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...DARK);
-    doc.text("HBO-ICT - Infrastructure & Security Management", M, y);
+    doc.text("HBO-ICT, Infrastructure & Security Management", M, y);
     doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(...GRAY);
     doc.text("Bezig met afstuderen", W - M, y, { align: "right" });
     y += 14;
@@ -383,7 +383,7 @@
     // Projecten
     heading("Uitgelichte projecten");
     doc.setFont("helvetica", "bold"); doc.setFontSize(10.5); doc.setTextColor(...DARK);
-    doc.text("Adviesrapport Back-up Security (overheidsinstelling)", M, y); y += 13;
+    doc.text("Adviesrapport Back-up Security (Belastingdienst)", M, y); y += 13;
     para("Strategisch en technisch adviesrapport ter voorkoming van ongeautoriseerde toegang tot back-updata. Diepgaande analyse met technische en procesmatige oplossingen; meerdere uitgewerkte scenario's met impact-analyses.", 9.5, GRAY, 13);
     y += 4;
     doc.setFont("helvetica", "bold"); doc.setFontSize(10.5); doc.setTextColor(...DARK);
@@ -409,7 +409,7 @@
     doc.setDrawColor(225, 228, 233); doc.setLineWidth(0.6);
     doc.line(M, y, W - M, y); y += 14;
     doc.setFont("helvetica", "italic"); doc.setFontSize(9); doc.setTextColor(...GRAY);
-    doc.text('"Security is een grote puzzel - en die los ik graag op."', M, y);
+    doc.text('"Security is een grote puzzel. En die los ik graag op."', M, y);
 
     doc.save("Aryan_Imanipour_CV.pdf");
   }
@@ -426,7 +426,7 @@
         toast("CV gedownload");
       } catch (err) {
         console.error(err);
-        toast("CV genereren mislukt — probeer opnieuw");
+        toast("CV genereren mislukt, probeer opnieuw");
       } finally {
         if (label) label.textContent = orig;
         cvBtn.disabled = false;
